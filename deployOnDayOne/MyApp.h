@@ -11,7 +11,17 @@
 
 @interface MyApp : NSObject
 
+@property (strong, nonatomic) NSMutableArray *listOfUsers;
+@property (strong, nonatomic) NSString *userResponse;
 @property (strong, nonatomic) NSString *currentUser;
+@property (strong, nonatomic) NSMutableArray *listOfAnswers;
+@property (strong, nonatomic) NSMutableArray *questionsArray;
+@property (strong, nonatomic) NSMutableDictionary *allUsers;
+
+-(NSString*)requestKeyboardInput;
+-(void)getUser;
+-(void)menu;
+-(void)readAnswers;
 
 -(void)execute;
 
