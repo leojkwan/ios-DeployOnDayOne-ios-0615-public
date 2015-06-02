@@ -24,11 +24,11 @@
     [self createQAArrays];
     
     [self getUser];
-    [self menu];
-    
-    
-    
-    
+    [self menuBURGER];
+
+
+
+
     
     
 }
@@ -60,7 +60,7 @@
         for (int i = 0; i < [self.questionsArray count]; i++){
             [answers addObject:@""];
         }
-        //        NSMutableArray *answers = [[NSMutableArray alloc] initWithCapacity:[self.questionsArray count]];
+//        NSMutableArray *answers = [[NSMutableArray alloc] initWithCapacity:[self.questionsArray count]];
         NSLog(@"%@", answers);
         NSString *user = self.currentUser;
         ([self.allUsers setObject:answers forKey:user]);
@@ -93,8 +93,8 @@
 
 -(void)createQAArrays
 {
-    self.questionsArray = [[NSMutableArray alloc] initWithObjects:@"Where were you born?", @"Have you ever wanted to be an astronaut?", @"Do you like Korean food?", nil];
-    
+     self.questionsArray = [[NSMutableArray alloc] initWithObjects:@"Where were you born?", @"Have you ever wanted to be an astronaut?", @"Do you like Korean food?", nil];
+
     
 }
 
@@ -105,10 +105,10 @@
         if ([[[self.allUsers objectForKey:self.currentUser] objectAtIndex:i] isEqualToString:@""]) {
             NSLog(@"%@", [self.questionsArray objectAtIndex:i]);
             [[self.allUsers objectForKey:self.currentUser] replaceObjectAtIndex:i withObject:[self requestKeyboardInput]];
-        }
+             }
     }
     
-    
+
     NSLog(@"Thanks for answering the questions!");
     [self menu];
 }
@@ -118,7 +118,7 @@
     NSLog(@"What's yo question?");
     [self.questionsArray addObject:[self requestKeyboardInput]];
     for (NSString *user in self.allUsers) {
-        [[self.allUsers objectForKey:user] addObject:@""];
+    [[self.allUsers objectForKey:user] addObject:@""];
     }
     NSLog(@"Would you like to add another question? \r 1. Yes \r 2. No");
     NSString *answer = [self requestKeyboardInput];
